@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Real Estate Analysis Chatbot</title>
+    
+    <!-- Load Tailwind CSS CDN for styling the dashboard -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Define the font and basic page margins */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    
+    <!-- 
+        CRITICAL: The React application (from index.js) renders 
+        the entire dashboard inside this div.
+    -->
+    <div id="root">
+        <!-- Optional: Small loading message shown briefly before React takes over -->
+        <div style="text-align: center; padding-top: 100px;">
+            <div style="border: 4px solid #f3f3f3; border-top: 4px solid #4f46e5; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite; margin: 0 auto;"></div>
+            <p style="margin-top: 15px; color: #4b5563;">Loading Application...</p>
+        </div>
+    </div>
+    
+    <!-- Script to set Dark Mode based on system preference before React loads -->
+    <script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark')
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+
+        // Define the spin animation for the loader
+        const style = document.createElement('style');
+        style.innerHTML = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

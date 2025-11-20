@@ -1,0 +1,11 @@
+Django>=4.2
+djangorestframework
+django-cors-headers
+pandas
+openpyxl
+python-dotenv
+numpy
+openai
+gunicorn
+whitenoise
+django-csp
